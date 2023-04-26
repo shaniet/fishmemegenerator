@@ -10,16 +10,17 @@
                 
 </head>
 <body>
-  <header class="title">corook meme generator</header>
+  <header id = "title" class="title">corook meme generator</header>
   <div class="container">
-    <img src="album.png" alt="Placeholder Image" class="img-fluid ">
-    <p class = "inspire">Inspired by artist corook</p>
-    <p class = "listen" >listen on <a href="https://open.spotify.com/track/6uL6HCOsEwvnmCX4cDf65g?si=aB1RRFXIQgqUSEDy9N57fw&dd=1&nd=1">Spotify</a></p>
+    <div id="image-container">
+      <img id="uploaded-image" src="album.png" alt="Placeholder Image" class="img-fluid ">
+    </div>
+    <p id="caption" class = "inspire">inspired by artist corook</p>
+    <p id = "spotify" class = "listen" >listen on <a href="https://open.spotify.com/track/6uL6HCOsEwvnmCX4cDf65g?si=aB1RRFXIQgqUSEDy9N57fw&dd=1&nd=1">Spotify</a></p>
     <div class="button-container">
       <div class="file-upload-wrapper">
-        <label for="upload-photo" class="btn btn-outline-secondary">
-          
-          Add selfie here
+        <label for="upload-photo" id = "circle" class="btn btn-outline-secondary">
+          add selfie here
         </label>
         <input type="file" id="upload-photo" class="d-none" data-mdb-file-upload="file-upload">
       </div>

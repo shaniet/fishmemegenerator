@@ -1,5 +1,5 @@
 body {
-  background-color: #f5f5f5 !important;;
+  background-color: #f5f5f5 !important;
   max-width:100%;
 }
 
@@ -19,7 +19,7 @@ font-family: 'Messy Handwritten', sans-serif;
 .img-fluid {
   display: block;
   margin: 0 auto;
-  width: 25rem;
+  width: 30rem;
   height: auto;
   border: 2px solid #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -41,6 +41,19 @@ font-family: 'Messy Handwritten', sans-serif;
   color
  
 }
+
+.increased {
+  font-size: 40px !important;
+}
+
+.decreasedTitle {
+  font-size: 3rem !important;
+}
+
+.decreased{
+  display: none !important;
+
+}
 .listen a {
   
   font-size: 20px;
@@ -58,7 +71,15 @@ font-family: 'Messy Handwritten', sans-serif;
   background-size: 30px;
   background-position: left center;
   padding-left: 40px;
+
 }
+
+#fishbowl-image {
+  opacity: 0.5;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 95%) !important;
+  background-image: url("fishbowl.png") !important;
+}
+
 
 
 
@@ -69,6 +90,21 @@ button {
   display: inline-block;
   margin-right: 10px;
 }
+
+
+.circle{
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  margin:auto;
+  align-items: center;
+}
+
+.circle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
 
 
 
