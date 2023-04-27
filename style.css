@@ -66,7 +66,7 @@ font-family: 'Messy Handwritten', sans-serif;
 }
 
 .file-upload-wrapper label {
-  background-image: url('fishy.png');
+  background-image: url('images/fishy.png');
   background-repeat: no-repeat;
   background-size: 30px;
   background-position: left center;
@@ -77,7 +77,7 @@ font-family: 'Messy Handwritten', sans-serif;
 #fishbowl-image {
   opacity: 0.5;
   background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 95%) !important;
-  background-image: url("fishbowl.png") !important;
+  background-image: url("imagse/fishbowl.png") !important;
 }
 
 
@@ -92,20 +92,6 @@ button {
 }
 
 
-.circle{
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  margin:auto;
-  align-items: center;
-}
-
-.circle img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1);
-
-
+.
 
 
