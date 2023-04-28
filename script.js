@@ -126,7 +126,7 @@ uploadPhotoButton.addEventListener('change', function() {
       uploadPhotoLabel.textContent = "Retake Photo";
       canvasElement.classList.remove("unloader");
       downloadElement.classList.remove("unloader")
-      // uploadedImage.classList.add("circle");
+      uploadedImage.classList.add("unloader");
       isFirstUpload = false;
     }
 
