@@ -30,6 +30,8 @@ font-family: 'Messy Handwritten', sans-serif;
 
 #canvas{
   width: 25rem !important;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
 .container {
