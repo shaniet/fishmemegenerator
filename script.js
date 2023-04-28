@@ -77,8 +77,6 @@ uploadPhotoButton.addEventListener('change', function() {
     var myCanvas = document.getElementById('canvas');
 
     var ctx = myCanvas.getContext('2d');
-    ctx.resetTransform();
-
   
     let uploadedImageNew = new Image();
 
@@ -87,6 +85,7 @@ uploadPhotoButton.addEventListener('change', function() {
     uploadedImageNew.src = reader.result;
 
     uploadedImageNew.onload = function() {
+
 
       // Draw the uploaded image centered within the border
       const imageSize = Math.min(canvas.width, canvas.height * 0.75);
@@ -99,7 +98,7 @@ uploadPhotoButton.addEventListener('change', function() {
       );
 
       // Add text above the uploaded image
-      ctx.font = "bold 23px arial";
+      ctx.font = "bold 23px' Messy Handwritten', sans-serif" ;
       ctx.textAlign = "center";
       const randomIndex = Math.floor(Math.random() * captions.length);
 
@@ -143,7 +142,7 @@ uploadPhotoButton.addEventListener('change', function() {
 
 function downloadImage() {
       var link = document.createElement('a');
-      link.download = 'fredagain.png';
+      link.download = 'corookmeme.png';
       link.href = document.getElementById('canvas').toDataURL()
       link.click();
     }
