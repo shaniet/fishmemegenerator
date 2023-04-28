@@ -85,7 +85,9 @@ uploadPhotoButton.addEventListener('change', function() {
     uploadedImageNew.src = reader.result;
 
     uploadedImageNew.onload = function() {
-
+      // Set the canvas background to white
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
       // Draw the uploaded image centered within the border
       const imageSize = Math.min(canvas.width, canvas.height * 0.75);
@@ -100,6 +102,7 @@ uploadPhotoButton.addEventListener('change', function() {
       // Add text above the uploaded image
       ctx.font = "bold 23px' Messy Handwritten', sans-serif" ;
       ctx.textAlign = "center";
+       ctx.fillStyle = "black";
       const randomIndex = Math.floor(Math.random() * captions.length);
 
       ctx.fillText("if i were a fish and you caught me you'd say ", canvas.width / 2, 55);
