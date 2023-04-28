@@ -91,15 +91,15 @@ uploadPhotoButton.addEventListener('change', function() {
 
     // titleElement.textContent = "if i were a were a fish and you caught me you'd say" +  captions[randomIndex];
 
-    uploadedImage.src = borderImg.src;
+    // uploadedImage.src = borderImg.src;
 
 
     
 
-    uploadedImage.style.backgroundImage = `url('${uploadedImageNew.src}')`;
+    // uploadedImage.style.backgroundImage = `url('${uploadedImageNew.src}')`;
 
-    uploadedImage.style.backgroundSize = "cover";
-    uploadedImage.style.backgroundPosition = "center";
+    // uploadedImage.style.backgroundSize = "cover";
+    // uploadedImage.style.backgroundPosition = "center";
 
 
     // Increase font size on first upload
@@ -107,7 +107,7 @@ uploadPhotoButton.addEventListener('change', function() {
       captionElement.classList.add("decreased");
       spotifyElement.classList.add("decreased");
       uploadPhotoLabel.textContent = "Retake Photo";
-      uploadedImage.classList.add("circle");
+      // uploadedImage.classList.add("circle");
       isFirstUpload = false;
     }
 
