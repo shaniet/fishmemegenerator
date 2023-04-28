@@ -22,14 +22,14 @@ font-family: 'Messy Handwritten', sans-serif;
   }
   .img-fluid{
     width: 25rem !important;
-  }
+  }e
   #canvas{
   width: 30rem !important;
 }
 }
 
 #canvas{
-  width: 25rem !important;
+  width: 20rem !important;
   margin: 0 auto !important;
 }
 
