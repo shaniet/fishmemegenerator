@@ -4,7 +4,8 @@ const uploadedImage = document.getElementById('uploaded-image');
 const captionElement = document.getElementById("caption");
 const spotifyElement = document.getElementById("spotify");
 const titleElement = document.getElementById("title");
-
+var myCanvas = document.getElementById('canvas');
+var ctx = myCanvas.getContext('2d');
 const uploadPhotoLabel = document.querySelector('label[for="upload-photo"]');
 
 const captions = [
@@ -47,11 +48,40 @@ uploadPhotoButton.addEventListener('change', function() {
 
     // create new image element for uploaded image
 
-    uploadedImageNew.src = reader.result;
-    
     // create new image element for fishbowl image
     const borderImg = new Image();
     borderImg.src = "images/border.png";
+    uploadedImageNew.src = reader.result;
+    // uploadedImageNew.onload = function() {
+    //   ctx.drawImage(uploadedImageNew, 0, 0);
+    //   borderImg.onload = function() {
+    //     ctx.drawImage(borderImg, 0, 0);
+    //   };
+    // };
+
+    uploadedImageNew.onload = function() {
+      // Draw the border image
+
+      // Draw the uploaded image centered within the border
+      const imageSize = Math.min(canvas.width, canvas.height * 0.75);
+      ctx.drawImage(
+        uploadedImageNew,
+        (canvas.width - imageSize) / 2,
+        (canvas.height - imageSize * 0.75) / 2,
+        imageSize,
+        imageSize * 0.75
+      );
+
+      // Add text above the uploaded image
+      ctx.font = "bold 24px Arial";
+      ctx.textAlign = "center";
+      ctx.fillText(captions[randomIndex], canvas.width / 2, 50);
+      borderImg.onload = function() {
+        ctx.drawImage(borderImg, 0, 0);
+      };
+    };
+
+
     const randomIndex = Math.floor(Math.random() * captions.length);
 
     titleElement.textContent = "if i were a were a fish and you caught me you'd say" +  captions[randomIndex];
@@ -77,9 +107,9 @@ uploadPhotoButton.addEventListener('change', function() {
     }
 
        // revoke the object URL
-    uploadedImageNew.onload = function() {
-      URL.revokeObjectURL(url);
-    };
+    // uploadedImageNew.onload = function() {
+    //   URL.revokeObjectURL(url);
+    // };
   }, false);
 
   if (file) {
