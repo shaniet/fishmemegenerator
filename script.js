@@ -6,6 +6,7 @@ const spotifyElement = document.getElementById("spotify");
 const titleElement = document.getElementById("title");
 const canvasElement = document.getElementById("canvas");
 const uploadPhotoLabel = document.querySelector('label[for="upload-photo"]');
+const download = document.getElementById('download');
 
 // <img id="uploaded-image" src="images/album.png" alt="Placeholder Image" class="img-fluid ">
 const captions = [
@@ -86,6 +87,13 @@ uploadPhotoButton.addEventListener('change', function() {
           );
       };
     };
+
+    function downloadImage() {
+      var link = document.createElement('a');
+      link.download = 'fredagain.png';
+      link.href = document.getElementById('canvas').toDataURL()
+      link.click();
+}
 
 
     const randomIndex = Math.floor(Math.random() * captions.length);
