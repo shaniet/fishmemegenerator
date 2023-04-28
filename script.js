@@ -80,9 +80,9 @@ uploadPhotoButton.addEventListener('change', function() {
       borderImg.onload = function() {
         ctx.drawImage(borderImg,
           (canvas.width - imageSize) / 2,
-          (canvas.height - imageSize) / 2 - 60,
+          (canvas.height - imageSize * 0.75) / 2,
           imageSize,
-          imageSize * (4/3)
+          imageSize
           );
       };
     };
