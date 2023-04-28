@@ -8,13 +8,11 @@ const canvasElement = document.getElementById("canvas");
 const uploadPhotoLabel = document.querySelector('label[for="upload-photo"]');
 const downloadElement = document.getElementById('download');
 
-// <img id="uploaded-image" src="images/album.png" alt="Placeholder Image" class="img-fluid ">
 const captions = [
-  
-  " I woke up like this",
- 
- 
-];
+"Looks like I found a catch of the day!", "I think I just landed a fish-tastic prize!", "Well, well, well...what do we have here?", "I'm the fish that got away...until now!", "I'm officially off the hook!", "You really scaled up with this one!", "Now that's what I call a fish story!", "I guess I'm the catch of the day!", "Looks like I'm taking the bait this time!", "Looks like I'm in deep water now!", "Are you sure you're not a cat? You're a great fisherman!", "You're really making a splash with this catch!", "I'm sure glad I'm not a mermaid!", "You know what they say...there are plenty of fish in the sea, but you caught the best one!", "Looks like you're the master baiter!", "I guess I'm a little fish in a big pond!", "I guess it's time for me to scale back.", "Well, looks like I'm a little hooked on you too!", "Looks like I'm fresh out of luck!", "I'm a fish, not a miracle worker!", "Looks like I'm your catch of the day...again!", "You're a real catch, and so am I!", "I'm floundering over here!", "You're really going fishing for compliments with this one!", "Looks like you're fishing for a good time, and you found it!", "You must have used some good bait to catch me!", "I'm the fish that got caught...or was it the other way around?", "Looks like I'm your lucky catch!", "Looks like I'm the fish that got fried!", "I guess I'm not as slippery as I thought!", "Looks like I'm the one who's hooked now!", "You're really making a splash with this catch of the day!", "You're really going overboard with this catch!", "Looks like I'm on the hook for a little while!", "Looks like I'm a little fish in a big fisherman's net!", "You really know how to reel 'em in!", "Looks like I'm the one who's all wet now!", "You're really making waves with this catch!", "Looks like I'm all out of bait!", "You're really fishing for compliments now, aren't you?", "Looks like you're the one who's hooked on me!", "I guess I'm the one who's in deep water now!", "Looks like I'm the one who's getting caught up in your net!", "You're really making a splash with this fish tale!", "Looks like I'm the one who's on the line now!", "I'm the one who's really fishing for a compliment now!", "Looks like you're the one who's swimming upstream now!", "I'm the one who's feeling a little fishy now!", "Looks like I'm the one who's caught up in your web!", "You're really making a splash with this big catch!", "Looks like I'm the one who's hooked on your fishing skills!", "I guess I'm the one who's all wet now!", "You're really making waves with this catch of the day!", "Looks like I'm the one who's on the line now!", "You're really fishing for compliments with this one!", "Looks like I'm the one who's all washed up!", "I'm the one who's really fishing for a good time now!", "Looks like I'm the one who's caught your eye!", "You're really making a splash with this fish tale!", "Looks like I'm the one who's in a net of trouble now!"
+]
+
+
 
 let isFirstUpload = true;
 
@@ -29,40 +27,11 @@ uploadPhotoButton.addEventListener('change', function() {
     var ctx = myCanvas.getContext('2d');
     let uploadedImageNew = new Image();
 
-     // Convert HEIC format to JPEG
-  // if (file && file.type === 'image/heic') {
-  //   try {
-  //     const jpegBlob = await window.heicConvert({
-  //       blob: file,
-  //       toType: "image/jpeg"
-  //     });
-  //     file = new File([jpegBlob], `${file.name.slice(0, -5)}.jpg`, {type: 'image/jpeg'});
-  //   } catch (error) {
-  //     console.error("HEIC conversion failed:", error);
-  //     return;
-  //   }
-  // }
-
-      // const url = URL.createObjectURL(file);
-
-      // uploadedImageNew.src = url;
-
-
-    // create new image element for uploaded image
-
-    // create new image element for fishbowl image
     const borderImg = new Image();
     borderImg.src = "images/border.png";
     uploadedImageNew.src = reader.result;
-    // uploadedImageNew.onload = function() {
-    //   ctx.drawImage(uploadedImageNew, 0, 0);
-    //   borderImg.onload = function() {
-    //     ctx.drawImage(borderImg, 0, 0);
-    //   };
-    // };
 
     uploadedImageNew.onload = function() {
-      // Draw the border image
 
       // Draw the uploaded image centered within the border
       const imageSize = Math.min(canvas.width, canvas.height * 0.75);
@@ -77,7 +46,9 @@ uploadPhotoButton.addEventListener('change', function() {
       // Add text above the uploaded image
       ctx.font = "bold 24px Arial";
       ctx.textAlign = "center";
-      ctx.fillText(captions[randomIndex], canvas.width / 2, 60);
+ 
+      ctx.fillText("if i were a fish and you caught me you'd say "+ captions[randomIndex], canvas.width / 2, 60);
+      
       borderImg.onload = function() {
         ctx.drawImage(borderImg,
           (canvas.width - imageSize) / 2,
@@ -91,18 +62,6 @@ uploadPhotoButton.addEventListener('change', function() {
 
     const randomIndex = Math.floor(Math.random() * captions.length);
 
-    // titleElement.textContent = "if i were a were a fish and you caught me you'd say" +  captions[randomIndex];
-
-    // uploadedImage.src = borderImg.src;
-
-
-    
-
-    // uploadedImage.style.backgroundImage = `url('${uploadedImageNew.src}')`;
-
-    // uploadedImage.style.backgroundSize = "cover";
-    // uploadedImage.style.backgroundPosition = "center";
-
 
     // Increase font size on first upload
     if (isFirstUpload) {
@@ -115,10 +74,6 @@ uploadPhotoButton.addEventListener('change', function() {
       isFirstUpload = false;
     }
 
-       // revoke the object URL
-    // uploadedImageNew.onload = function() {
-    //   URL.revokeObjectURL(url);
-    // };
   }, false);
 
   if (file) {
