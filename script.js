@@ -4,10 +4,9 @@ const uploadedImage = document.getElementById('uploaded-image');
 const captionElement = document.getElementById("caption");
 const spotifyElement = document.getElementById("spotify");
 const titleElement = document.getElementById("title");
-var myCanvas = document.getElementById('canvas');
-var ctx = myCanvas.getContext('2d');
 const uploadPhotoLabel = document.querySelector('label[for="upload-photo"]');
 
+// <img id="uploaded-image" src="images/album.png" alt="Placeholder Image" class="img-fluid ">
 const captions = [
   
   " I woke up like this",
@@ -24,7 +23,8 @@ uploadPhotoButton.addEventListener('change', function() {
   const reader = new FileReader();
 
   reader.addEventListener('load', async function() {
-
+    var myCanvas = document.getElementById('canvas');
+    var ctx = myCanvas.getContext('2d');
     let uploadedImageNew = new Image();
 
      // Convert HEIC format to JPEG
@@ -69,19 +69,19 @@ uploadPhotoButton.addEventListener('change', function() {
         (canvas.width - imageSize) / 2,
         (canvas.height - imageSize * 0.75) / 2,
         imageSize,
-        imageSize * 0.75
+        imageSize
       );
 
       // Add text above the uploaded image
       ctx.font = "bold 24px Arial";
       ctx.textAlign = "center";
-      ctx.fillText(captions[randomIndex], canvas.width / 2, 50);
+      ctx.fillText(captions[randomIndex], canvas.width / 2, 60);
       borderImg.onload = function() {
         ctx.drawImage(borderImg,
           (canvas.width - imageSize) / 2,
-          (canvas.height - imageSize) / 2,
+          (canvas.height - imageSize) / 2 - 60,
           imageSize,
-          imageSize
+          imageSize * (4/3)
           );
       };
     };
@@ -89,7 +89,7 @@ uploadPhotoButton.addEventListener('change', function() {
 
     const randomIndex = Math.floor(Math.random() * captions.length);
 
-    titleElement.textContent = "if i were a were a fish and you caught me you'd say" +  captions[randomIndex];
+    // titleElement.textContent = "if i were a were a fish and you caught me you'd say" +  captions[randomIndex];
 
     uploadedImage.src = borderImg.src;
 
