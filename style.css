@@ -3,6 +3,9 @@ body {
   max-width:100%;
 }
 
+.unloader {
+  display: none;
+}
 .title {
 font-family: 'Messy Handwritten', sans-serif;
   font-size: 4rem;

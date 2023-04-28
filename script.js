@@ -4,6 +4,7 @@ const uploadedImage = document.getElementById('uploaded-image');
 const captionElement = document.getElementById("caption");
 const spotifyElement = document.getElementById("spotify");
 const titleElement = document.getElementById("title");
+const canvasElement = document.getElementById("canvas");
 const uploadPhotoLabel = document.querySelector('label[for="upload-photo"]');
 
 // <img id="uploaded-image" src="images/album.png" alt="Placeholder Image" class="img-fluid ">
@@ -107,6 +108,7 @@ uploadPhotoButton.addEventListener('change', function() {
       captionElement.classList.add("decreased");
       spotifyElement.classList.add("decreased");
       uploadPhotoLabel.textContent = "Retake Photo";
+      canvasElement.classList.remove("unloader");
       // uploadedImage.classList.add("circle");
       isFirstUpload = false;
     }
