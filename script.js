@@ -4,9 +4,7 @@ const uploadedImage = document.getElementById('uploaded-image');
 const captionElement = document.getElementById("caption");
 const spotifyElement = document.getElementById("spotify");
 const titleElement = document.getElementById("title");
-const { promisify } = require('util');
-const fs = require('fs');
-const convert = require('heic-convert');
+
 const uploadPhotoLabel = document.querySelector('label[for="upload-photo"]');
 
 const captions = [
@@ -29,27 +27,27 @@ uploadPhotoButton.addEventListener('change', function() {
     let uploadedImageNew = new Image();
 
      // Convert HEIC format to JPEG
-  if (file && file.type === 'image/heic') {
-    try {
-      const jpegBlob = await window.heicConvert({
-        blob: file,
-        toType: "image/jpeg"
-      });
-      file = new File([jpegBlob], `${file.name.slice(0, -5)}.jpg`, {type: 'image/jpeg'});
-    } catch (error) {
-      console.error("HEIC conversion failed:", error);
-      return;
-    }
-  }
+  // if (file && file.type === 'image/heic') {
+  //   try {
+  //     const jpegBlob = await window.heicConvert({
+  //       blob: file,
+  //       toType: "image/jpeg"
+  //     });
+  //     file = new File([jpegBlob], `${file.name.slice(0, -5)}.jpg`, {type: 'image/jpeg'});
+  //   } catch (error) {
+  //     console.error("HEIC conversion failed:", error);
+  //     return;
+  //   }
+  // }
 
-      const url = URL.createObjectURL(file);
+      // const url = URL.createObjectURL(file);
 
-      uploadedImageNew.src = url;
+      // uploadedImageNew.src = url;
 
 
     // create new image element for uploaded image
 
-    // uploadedImageNew.src = reader.result;
+    uploadedImageNew.src = reader.result;
     
     // create new image element for fishbowl image
     const borderImg = new Image();
