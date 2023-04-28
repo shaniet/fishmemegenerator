@@ -77,7 +77,12 @@ uploadPhotoButton.addEventListener('change', function() {
       ctx.textAlign = "center";
       ctx.fillText(captions[randomIndex], canvas.width / 2, 50);
       borderImg.onload = function() {
-        ctx.drawImage(borderImg, 0, 0);
+        ctx.drawImage(borderImg,
+          (canvas.width - imageSize) / 2,
+          (canvas.height - imageSize) / 2,
+          imageSize,
+          imageSize
+          );
       };
     };
 
