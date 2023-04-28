@@ -11,9 +11,18 @@ body {
 }
 .title {
 font-family: 'Messy Handwritten', sans-serif;
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   margin-top: 20px;
+}
+
+@media screen and (min-width: 1000px) {
+  .title {
+     font-size: 5rem !important;
+  }
+  .img-fluid{
+    width: 25rem !important;
+  }
 }
 
 .container {
@@ -25,7 +34,7 @@ font-family: 'Messy Handwritten', sans-serif;
 .img-fluid {
   display: block;
   margin: 0 auto;
-  width: 30rem;
+  width: 20rem;
   height: auto;
   border: 2px solid #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
