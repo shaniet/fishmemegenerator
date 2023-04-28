@@ -7,7 +7,7 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 .unloader {
-  display: none;
+  display: none !important;
 }
 .title {
 font-family: 'Messy Handwritten', sans-serif;
