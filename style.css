@@ -23,6 +23,13 @@ font-family: 'Messy Handwritten', sans-serif;
   .img-fluid{
     width: 25rem !important;
   }
+  #canvas{
+  width: 30rem !important;
+}
+}
+
+#canvas{
+  width: 25rem !important;
 }
 
 .container {
@@ -108,6 +115,6 @@ button {
 }
 
 
-.
+
 
 
