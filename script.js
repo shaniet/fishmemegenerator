@@ -61,6 +61,7 @@ const captions = [
 "i'm the fish that got caught... or did i?",
 ];
 
+var jank = false;
 
 let isFirstUpload = true;
 
@@ -77,7 +78,8 @@ uploadPhotoButton.addEventListener('change', function() {
     var myCanvas = document.getElementById('canvas');
 
     var ctx = myCanvas.getContext('2d');
-  
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    console.log("THIS HAPPENED AGAIN")
     let uploadedImageNew = new Image();
 
     const borderImg = new Image();
@@ -89,15 +91,34 @@ uploadPhotoButton.addEventListener('change', function() {
       ctx.fillStyle = "white";
       ctx.fillRect(0, 0, canvas.width, canvas.height);
 
+
+      // cropping stuff 
       // Draw the uploaded image centered within the border
       const imageSize = Math.min(canvas.width, canvas.height * 0.75);
-      ctx.drawImage(
-        uploadedImageNew,
-        (canvas.width - imageSize) / 2,
-        (canvas.height - imageSize * 0.75) / 2,
-        imageSize,
-        imageSize
-      );
+      image = uploadedImageNew
+      if (image.width<=image.height) {
+          ctx.drawImage(image,0,(image.height-image.width)/2,image.width,image.width,(canvas.width - imageSize) / 2,   (canvas.height - imageSize * 0.75) / 2,imageSize,imageSize);
+      } else {
+          ctx.drawImage(image,(image.width-image.height)/2,0,image.height,image.height,(canvas.width - imageSize) / 2,   (canvas.height - imageSize * 0.75) / 2,imageSize,imageSize);
+      }
+      // ctx.drawImage(
+      //   uploadedImageNew,
+      //   (canvas.width - imageSize) / 2,
+      //   (canvas.height - imageSize * 0.75) / 2,
+      //   uploadedImageNew.width,
+      //   uploadedImageNew.height,
+      //   (canvas.width - imageSize) / 2,
+      //   (canvas.height - imageSize * 0.75) / 2,
+      //   imageSize,
+      //   imageSize
+      // );
+      // ctx.drawImage(
+      //   uploadedImageNew,
+      //   (canvas.width - imageSize) / 2,
+      //   (canvas.height - imageSize * 0.75) / 2,
+      //   imageSize,
+      //   imageSize
+      // );
 
       // Add text above the uploaded image
       ctx.font = "bold 23px' Messy Handwritten', sans-serif" ;
@@ -108,7 +129,18 @@ uploadPhotoButton.addEventListener('change', function() {
       ctx.fillText("if i were a fish and you caught me you'd say ", canvas.width / 2, 55);
       ctx.fillText(captions[randomIndex], canvas.width / 2, 95);
 
+      console.log("Im a runner")
+      if (jank) {
+        ctx.drawImage(borderImg,
+          (canvas.width - imageSize) / 2,
+          (canvas.height - imageSize * 0.75) / 2,
+          imageSize,
+          imageSize
+          );
+      }
       borderImg.onload = function() {
+        console.log("Hi!")
+        jank = true
         ctx.drawImage(borderImg,
           (canvas.width - imageSize) / 2,
           (canvas.height - imageSize * 0.75) / 2,
